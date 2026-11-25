@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MGSJGDZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+  </script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hooksmith — Local API & Webhook Forge</title>
-  <meta name="description" content="Hooksmith: Local API & Webhook Forge. Intercept, inspect, mock with zero-config SSL, trigger asynchronous callbacks, and replay webhooks 100% offline." />
+  <meta name="description"
+    content="Hooksmith: Local API & Webhook Forge. Intercept, inspect, mock with zero-config SSL, trigger asynchronous callbacks, and replay webhooks 100% offline." />
   <link rel="icon" type="image/png" href="assets/hooksmith-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="bg-forge-grid">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGSJGDZZ" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- 1. Navbar -->
   <header class="navbar">
@@ -32,7 +50,8 @@
       <div class="nav-actions">
         <!-- Language Switcher with SVG Flags -->
         <div class="lang-switcher" role="group" aria-label="Language switcher">
-          <button type="button" class="lang-btn active" data-lang="pt" onclick="setLanguage('pt')" title="Português (Brasil)">
+          <button type="button" class="lang-btn active" data-lang="pt" onclick="setLanguage('pt')"
+            title="Português (Brasil)">
             <svg viewBox="0 0 24 16" aria-hidden="true">
               <rect width="24" height="16" rx="2" fill="#009B3A" />
               <polygon points="12,1.8 21.8,8 12,14.2 2.2,8" fill="#FEDF00" />
@@ -44,7 +63,8 @@
           <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')" title="English (US)">
             <svg viewBox="0 0 24 16" aria-hidden="true">
               <rect width="24" height="16" rx="2" fill="#B22234" />
-              <path d="M0,2.46H24 M0,4.92H24 M0,7.38H24 M0,9.84H24 M0,12.3H24 M0,14.76H24" stroke="#FFFFFF" stroke-width="1.23" />
+              <path d="M0,2.46H24 M0,4.92H24 M0,7.38H24 M0,9.84H24 M0,12.3H24 M0,14.76H24" stroke="#FFFFFF"
+                stroke-width="1.23" />
               <rect width="10.5" height="8.61" rx="1" fill="#3C3B6E" />
             </svg>
             <span>EN</span>
@@ -81,16 +101,19 @@
       </h1>
 
       <p class="hero-subtitle" data-i18n="hero_subtitle">
-        Intercepte, inspecione, simule mocks com SSL/HTTPS automático, dispare callbacks assíncronos e faça replay de requisições em tempo real — direto no seu desktop.
+        Intercepte, inspecione, simule mocks com SSL/HTTPS automático, dispare callbacks assíncronos e faça replay de
+        requisições em tempo real — direto no seu desktop.
       </p>
 
       <div class="hero-cta">
         <a href="#manual" class="btn btn-primary" data-i18n="cta_manual">📖 Ler Manual de Uso</a>
-        <a href="https://github.com/claudsan/hooksmith" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="cta_github">⭐ Ver no GitHub</a>
+        <a href="https://github.com/claudsan/hooksmith" target="_blank" rel="noopener" class="btn btn-secondary"
+          data-i18n="cta_github">⭐ Ver no GitHub</a>
       </div>
 
       <p style="font-size:0.84rem;color:var(--brand);margin-bottom:10px;font-weight:600;" data-i18n="sim_hint">
-        💡 Simulador Interativo: Clique nas requisições ou nas regras de mock abaixo para inspecionar e testar o botão Pretty/Raw!
+        💡 Simulador Interativo: Clique nas requisições ou nas regras de mock abaixo para inspecionar e testar o botão
+        Pretty/Raw!
       </p>
 
       <!-- Interactive Hooksmith Desktop Mockup -->
@@ -122,7 +145,8 @@
             <div class="sim-card" style="cursor:default;">
               <div class="sim-row" style="justify-content:space-between;">
                 <strong style="font-size:0.8rem;">🔒 Gateway Pagamentos</strong>
-                <span style="color:var(--ok);font-family:var(--font-mono);font-size:0.68rem;font-weight:700;">LIVE</span>
+                <span
+                  style="color:var(--ok);font-family:var(--font-mono);font-size:0.68rem;font-weight:700;">LIVE</span>
               </div>
               <div class="sim-row" style="margin-top:5px;">
                 <span style="font-family:var(--font-mono);font-weight:700;">:8443</span>
@@ -133,7 +157,8 @@
             <div class="sim-card" style="cursor:default;">
               <div class="sim-row" style="justify-content:space-between;">
                 <strong style="font-size:0.8rem;">⚡ Backend Callback</strong>
-                <span style="color:var(--ok);font-family:var(--font-mono);font-size:0.68rem;font-weight:700;">LIVE</span>
+                <span
+                  style="color:var(--ok);font-family:var(--font-mono);font-size:0.68rem;font-weight:700;">LIVE</span>
               </div>
               <div class="sim-row" style="margin-top:5px;">
                 <span style="font-family:var(--font-mono);font-weight:700;">:4010</span>
@@ -153,7 +178,8 @@
               </div>
               <div class="sim-row" style="margin-top:6px;">
                 <span class="method-badge method-POST">POST</span>
-                <span style="font-family:var(--font-mono);font-size:0.74rem;color:var(--fg-muted);">/webhooks/payment</span>
+                <span
+                  style="font-family:var(--font-mono);font-size:0.74rem;color:var(--fg-muted);">/webhooks/payment</span>
               </div>
               <div class="sim-row" style="margin-top:6px;">
                 <span class="tip-chip" style="padding:1px 6px;font-size:0.68rem;color:#34D399;">200</span>
@@ -169,7 +195,8 @@
               </div>
               <div class="sim-row" style="margin-top:6px;">
                 <span class="method-badge method-POST">POST</span>
-                <span style="font-family:var(--font-mono);font-size:0.74rem;color:var(--fg-muted);">/webhooks/gateway</span>
+                <span
+                  style="font-family:var(--font-mono);font-size:0.74rem;color:var(--fg-muted);">/webhooks/gateway</span>
               </div>
               <div class="sim-row" style="margin-top:6px;">
                 <span class="tip-chip" style="padding:1px 6px;font-size:0.68rem;color:#FB7185;">503</span>
@@ -207,7 +234,8 @@
               <div class="sim-row" style="justify-content:space-between;">
                 <div style="display:flex;align-items:center;gap:6px;">
                   <span class="method-badge method-POST">POST</span>
-                  <span style="font-family:var(--font-mono);font-size:0.78rem;font-weight:600;">/api/orders/callback</span>
+                  <span
+                    style="font-family:var(--font-mono);font-size:0.78rem;font-weight:600;">/api/orders/callback</span>
                 </div>
                 <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">1s ago</span>
               </div>
@@ -229,7 +257,8 @@
                 <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">3m ago</span>
               </div>
               <div class="sim-row" style="margin-top:6px;justify-content:space-between;">
-                <span style="font-family:var(--font-mono);font-size:0.73rem;color:var(--err);">● 503 Error · 804ms</span>
+                <span style="font-family:var(--font-mono);font-size:0.73rem;color:var(--err);">● 503 Error ·
+                  804ms</span>
                 <div style="display:flex;align-items:center;gap:5px;">
                   <span class="source-tag tag-CAPTURED">CAPTURED</span>
                   <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">:8443</span>
@@ -253,7 +282,8 @@
           <span class="section-eyebrow" data-i18n="story_eyebrow">☕ DE DEV PARA DEV</span>
           <h2 data-i18n="story_title">Nascido da frustração real com o WireMock e túneis na nuvem</h2>
           <p data-i18n="story_desc">
-            Quem já desenvolveu integrações com gateways de pagamento, ERPs ou sistemas de mensageria conhece bem o sofrimento de testar webhooks localmente.
+            Quem já desenvolveu integrações com gateways de pagamento, ERPs ou sistemas de mensageria conhece bem o
+            sofrimento de testar webhooks localmente.
           </p>
         </div>
 
@@ -261,20 +291,34 @@
           <div class="story-card pain">
             <h3 data-i18n="pain_title">❌ O Sofrimento Antigo (WireMock & Túneis)</h3>
             <ul class="story-list">
-              <li><span>•</span><span data-i18n="pain_1"><strong>O Dilema do WireMock:</strong> Dezenas de linhas em Java ou JSONs quilométricos de mapeamento e containers Docker pesados apenas para responder um simples <code>200 OK</code>.</span></li>
-              <li><span>•</span><span data-i18n="pain_2"><strong>A Cegueira do Terminal:</strong> Ficar olhando logs no console sem saber se o webhook chegou, se faltou header ou se o payload veio truncado.</span></li>
-              <li><span>•</span><span data-i18n="pain_3"><strong>O Pesadelo Assíncrono:</strong> Criar scripts improvisados ou controllers fakes para simular um gateway que responde <code>200 OK</code> e manda um POST de confirmação 3 segundos depois.</span></li>
-              <li><span>•</span><span data-i18n="pain_4"><strong>Dependência de Túneis:</strong> URLs rotativas que mudam a cada reinício, limites de requisição e dados sensíveis trafegando em servidores de terceiros.</span></li>
+              <li><span>•</span><span data-i18n="pain_1"><strong>O Dilema do WireMock:</strong> Dezenas de linhas em
+                  Java ou JSONs quilométricos de mapeamento e containers Docker pesados apenas para responder um simples
+                  <code>200 OK</code>.</span></li>
+              <li><span>•</span><span data-i18n="pain_2"><strong>A Cegueira do Terminal:</strong> Ficar olhando logs no
+                  console sem saber se o webhook chegou, se faltou header ou se o payload veio truncado.</span></li>
+              <li><span>•</span><span data-i18n="pain_3"><strong>O Pesadelo Assíncrono:</strong> Criar scripts
+                  improvisados ou controllers fakes para simular um gateway que responde <code>200 OK</code> e manda um
+                  POST de confirmação 3 segundos depois.</span></li>
+              <li><span>•</span><span data-i18n="pain_4"><strong>Dependência de Túneis:</strong> URLs rotativas que
+                  mudam a cada reinício, limites de requisição e dados sensíveis trafegando em servidores de
+                  terceiros.</span></li>
             </ul>
           </div>
 
           <div class="story-card forge">
             <h3 data-i18n="forge_title">🔥 O Jeito Hooksmith</h3>
             <ul class="story-list">
-              <li><span>✓</span><span data-i18n="forge_1"><strong>Portas HTTP & HTTPS em 2 Cliques:</strong> Crie listeners locais com certificado SSL auto-assinado emitido automaticamente.</span></li>
-              <li><span>✓</span><span data-i18n="forge_2"><strong>Visibilidade Total em Tempo Real:</strong> Veja método, rota, status, tempo em ms, data/hora exata da chamada e payload com syntax highlighting.</span></li>
-              <li><span>✓</span><span data-i18n="forge_3"><strong>Callbacks Assíncronos Nativos:</strong> Configure na própria regra de mock a URL, método, delay e payload que o Hooksmith deve disparar após responder.</span></li>
-              <li><span>✓</span><span data-i18n="forge_4"><strong>Inspeção & Replay Instantâneo:</strong> Clique num mock para inspecionar seus detalhes, redimensione o painel Request/Response e formate JSON com 1 clique.</span></li>
+              <li><span>✓</span><span data-i18n="forge_1"><strong>Portas HTTP & HTTPS em 2 Cliques:</strong> Crie
+                  listeners locais com certificado SSL auto-assinado emitido automaticamente.</span></li>
+              <li><span>✓</span><span data-i18n="forge_2"><strong>Visibilidade Total em Tempo Real:</strong> Veja
+                  método, rota, status, tempo em ms, data/hora exata da chamada e payload com syntax
+                  highlighting.</span></li>
+              <li><span>✓</span><span data-i18n="forge_3"><strong>Callbacks Assíncronos Nativos:</strong> Configure na
+                  própria regra de mock a URL, método, delay e payload que o Hooksmith deve disparar após
+                  responder.</span></li>
+              <li><span>✓</span><span data-i18n="forge_4"><strong>Inspeção & Replay Instantâneo:</strong> Clique num
+                  mock para inspecionar seus detalhes, redimensione o painel Request/Response e formate JSON com 1
+                  clique.</span></li>
             </ul>
           </div>
         </div>
@@ -288,7 +332,8 @@
           <span class="section-eyebrow" data-i18n="feat_eyebrow">🚀 RECURSOS PRINCIPAIS</span>
           <h2 data-i18n="feat_title">Tudo o que você precisa para dominar integrações</h2>
           <p data-i18n="feat_subtitle">
-            Projetado para substituir múltiplos scripts, containers de mock e ferramentas dispersas por uma única interface coesa.
+            Projetado para substituir múltiplos scripts, containers de mock e ferramentas dispersas por uma única
+            interface coesa.
           </p>
         </div>
 
@@ -296,37 +341,43 @@
           <div class="feature-card">
             <div class="feature-icon">🔒</div>
             <h3 data-i18n="f1_title">Listeners HTTP & HTTPS (Auto SSL)</h3>
-            <p data-i18n="f1_desc">Abra quantas portas locais quiser. Ative HTTPS e o Hooksmith gera e gerencia os certificados SSL locais automaticamente.</p>
+            <p data-i18n="f1_desc">Abra quantas portas locais quiser. Ative HTTPS e o Hooksmith gera e gerencia os
+              certificados SSL locais automaticamente.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">↕️</div>
             <h3 data-i18n="f2_title">Painel Redimensionável & Data/Hora</h3>
-            <p data-i18n="f2_desc">Divisor arrastável entre Request e Response (duplo clique para 50%/50%), registro de data/hora exata da chamada e editor Monaco.</p>
+            <p data-i18n="f2_desc">Divisor arrastável entre Request e Response (duplo clique para 50%/50%), registro de
+              data/hora exata da chamada e editor Monaco.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">✨</div>
             <h3 data-i18n="f3_title">Prettify JSON Inteligente</h3>
-            <p data-i18n="f3_desc">JSONs minificados são exibidos formatados por padrão. Alterne entre Pretty e Raw em 1 clique e copie já indentado.</p>
+            <p data-i18n="f3_desc">JSONs minificados são exibidos formatados por padrão. Alterne entre Pretty e Raw em 1
+              clique e copie já indentado.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🔍</div>
             <h3 data-i18n="f4_title">Inspeção de Mocks + Tag SSL</h3>
-            <p data-i18n="f4_desc">Clique em qualquer regra na Sidebar para inspecioná-la no painel direito sem abrir o editor por engano. Veja a porta e a badge SSL.</p>
+            <p data-i18n="f4_desc">Clique em qualquer regra na Sidebar para inspecioná-la no painel direito sem abrir o
+              editor por engano. Veja a porta e a badge SSL.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🚀</div>
             <h3 data-i18n="f5_title">Callbacks Assíncronos por Regra</h3>
-            <p data-i18n="f5_desc">Simule o ciclo completo de gateways (Pix, Stripe, MercadoPago): o mock responde na hora e dispara um webhook de callback após o delay configurado.</p>
+            <p data-i18n="f5_desc">Simule o ciclo completo de gateways (Pix, Stripe, MercadoPago): o mock responde na
+              hora e dispara um webhook de callback após o delay configurado.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">⚡</div>
             <h3 data-i18n="f6_title">Edit & Replay Instantâneo</h3>
-            <p data-i18n="f6_desc">Modifique o body ou os headers de qualquer requisição capturada e reenvie-a com Ctrl+Enter para testar seu backend.</p>
+            <p data-i18n="f6_desc">Modifique o body ou os headers de qualquer requisição capturada e reenvie-a com
+              Ctrl+Enter para testar seu backend.</p>
           </div>
         </div>
       </div>
@@ -347,7 +398,8 @@
             <div>
               <h3 data-i18n="m1_title">Criando e Gerenciando Listeners (HTTP & HTTPS)</h3>
               <p data-i18n="m1_desc">
-                Na barra lateral esquerda, clique em "+" em Listeners. Defina um nome amigável (ex: Gateway Pagamento), escolha a porta (ex: 4010 ou 8443) e marque a opção HTTPS/SSL se desejar criptografia local automática.
+                Na barra lateral esquerda, clique em "+" em Listeners. Defina um nome amigável (ex: Gateway Pagamento),
+                escolha a porta (ex: 4010 ou 8443) e marque a opção HTTPS/SSL se desejar criptografia local automática.
               </p>
               <div class="manual-tips">
                 <span class="tip-chip">HTTP / HTTPS</span>
@@ -362,7 +414,8 @@
             <div>
               <h3 data-i18n="m2_title">Monitorando o Live Traffic e Filtros</h3>
               <p data-i18n="m2_desc">
-                Toda chamada recebida aparece instantaneamente na coluna central com método, rota, status HTTP, latência e tag de origem (CAPTURED, MOCKED, REPLAY ou CALLBACK). Use a busca (Ctrl+K) ou os filtros rápidos.
+                Toda chamada recebida aparece instantaneamente na coluna central com método, rota, status HTTP, latência
+                e tag de origem (CAPTURED, MOCKED, REPLAY ou CALLBACK). Use a busca (Ctrl+K) ou os filtros rápidos.
               </p>
               <div class="manual-tips">
                 <span class="tip-chip">CAPTURED</span>
@@ -378,7 +431,9 @@
             <div>
               <h3 data-i18n="m3_title">Inspecionando Payloads, Redimensionando e Formatando JSON</h3>
               <p data-i18n="m3_desc">
-                Ao clicar em uma requisição, o painel direito mostra a data e hora exatas da chamada. Arraste a barra divisória horizontal entre Request e Response para ampliar payloads extensos e use o botão "Pretty" para formatar JSON.
+                Ao clicar em uma requisição, o painel direito mostra a data e hora exatas da chamada. Arraste a barra
+                divisória horizontal entre Request e Response para ampliar payloads extensos e use o botão "Pretty" para
+                formatar JSON.
               </p>
               <div class="manual-tips">
                 <span class="tip-chip">📅 Data & Hora Exatas</span>
@@ -393,7 +448,9 @@
             <div>
               <h3 data-i18n="m4_title">Inspecionando e Editando Regras de Mock</h3>
               <p data-i18n="m4_desc">
-                Clique em um card em "Mock Rules" para visualizar todos os seus detalhes e comando cURL no Painel de Inspeção. Ao lado da porta, a tag SSL indica listeners seguros. Para editar, clique no ícone de lápis ou em "Editar Regra".
+                Clique em um card em "Mock Rules" para visualizar todos os seus detalhes e comando cURL no Painel de
+                Inspeção. Ao lado da porta, a tag SSL indica listeners seguros. Para editar, clique no ícone de lápis ou
+                em "Editar Regra".
               </p>
               <div class="manual-tips">
                 <span class="tip-chip">🔍 Mock Inspector (Read-Only)</span>
@@ -408,7 +465,9 @@
             <div>
               <h3 data-i18n="m5_title">Configurando Callbacks Assíncronos Automatizados</h3>
               <p data-i18n="m5_desc">
-                Dentro do editor de Mock, ative "Callback Assíncrono". Informe o método (POST/PUT), a URL do seu backend local, o delay em milissegundos e o JSON do evento. O Hooksmith disparará o callback automaticamente após responder o mock.
+                Dentro do editor de Mock, ative "Callback Assíncrono". Informe o método (POST/PUT), a URL do seu backend
+                local, o delay em milissegundos e o JSON do evento. O Hooksmith disparará o callback automaticamente
+                após responder o mock.
               </p>
               <div class="manual-tips">
                 <span class="tip-chip">🚀 Webhook Callback</span>
@@ -423,7 +482,8 @@
             <div>
               <h3 data-i18n="m6_title">Edit & Replay de Requisições</h3>
               <p data-i18n="m6_desc">
-                Selecione qualquer requisição capturada, clique em "Edit & Replay", ajuste o JSON ou cabeçalhos no editor Monaco e pressione Ctrl+Enter para disparar a nova chamada.
+                Selecione qualquer requisição capturada, clique em "Edit & Replay", ajuste o JSON ou cabeçalhos no
+                editor Monaco e pressione Ctrl+Enter para disparar a nova chamada.
               </p>
               <div class="manual-tips">
                 <span class="tip-chip">Monaco Editor</span>
@@ -471,7 +531,8 @@
           </div>
         </div>
 
-        <div style="margin-top:32px;background:var(--bg-panel);border:1px solid var(--line);border-radius:12px;padding:22px;text-align:center;">
+        <div
+          style="margin-top:32px;background:var(--bg-panel);border:1px solid var(--line);border-radius:12px;padding:22px;text-align:center;">
           <p style="font-family:var(--font-mono);font-size:0.82rem;color:var(--fg-muted);">
             🔒 <strong>SQLite Local Storage:</strong>
             Windows: <code>%APPDATA%/Hooksmith/hooksmith.db</code> •
@@ -487,11 +548,13 @@
     <div class="container">
       <p>
         <strong>Hooksmith</strong> — Local API & Webhook Forge • MIT License •
-        <a href="https://github.com/claudsan/hooksmith" style="color:var(--brand);text-decoration:none;">GitHub Repository</a>
+        <a href="https://github.com/claudsan/hooksmith" style="color:var(--brand);text-decoration:none;">GitHub
+          Repository</a>
       </p>
     </div>
   </footer>
 
   <script src="app.js"></script>
 </body>
+
 </html>
