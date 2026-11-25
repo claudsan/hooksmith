@@ -8,7 +8,8 @@
 
 <p align="center">
   <a href="README.pt-BR.md">🇧🇷 Versão em Português</a> •
-  <a href="README.md">🇺🇸 English Version</a>
+  <a href="README.md">🇺🇸 English Version</a> •
+  <a href="https://claudsan.github.io/hooksmith/">🌐 Official Website & Interactive Manual</a>
 </p>
 
 ---

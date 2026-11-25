@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hooksmith — Local API & Webhook Forge</title>
+  <meta name="description" content="Hooksmith: Local API & Webhook Forge. Intercept, inspect, mock with zero-config SSL, trigger asynchronous callbacks, and replay webhooks 100% offline." />
+  <link rel="icon" type="image/png" href="assets/hooksmith-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-forge-grid">
+
+  <!-- 1. Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="brand-link">
+        <img src="assets/hooksmith-icon.png" alt="Hooksmith Icon" />
+        <span>Hooksmith</span>
+        <span class="brand-tag">v1.0.0</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#story" data-i18n="nav_story">A Origem</a>
+        <a href="#features" data-i18n="nav_features">Funcionalidades</a>
+        <a href="#manual" data-i18n="nav_manual">Manual de Uso</a>
+        <a href="#shortcuts" data-i18n="nav_shortcuts">Atalhos</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Switcher with SVG Flags -->
+        <div class="lang-switcher" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-lang="pt" onclick="setLanguage('pt')" title="Português (Brasil)">
+            <svg viewBox="0 0 24 16" aria-hidden="true">
+              <rect width="24" height="16" rx="2" fill="#009B3A" />
+              <polygon points="12,1.8 21.8,8 12,14.2 2.2,8" fill="#FEDF00" />
+              <circle cx="12" cy="8" r="3.6" fill="#002776" />
+              <path d="M8.6,6.8 Q12,5.6 15.4,7.6" stroke="#FFFFFF" stroke-width="0.7" fill="none" />
+            </svg>
+            <span>PT</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')" title="English (US)">
+            <svg viewBox="0 0 24 16" aria-hidden="true">
+              <rect width="24" height="16" rx="2" fill="#B22234" />
+              <path d="M0,2.46H24 M0,4.92H24 M0,7.38H24 M0,9.84H24 M0,12.3H24 M0,14.76H24" stroke="#FFFFFF" stroke-width="1.23" />
+              <rect width="10.5" height="8.61" rx="1" fill="#3C3B6E" />
+            </svg>
+            <span>EN</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="es" onclick="setLanguage('es')" title="Español">
+            <svg viewBox="0 0 24 16" aria-hidden="true">
+              <rect width="24" height="16" rx="2" fill="#AA151B" />
+              <rect y="4" width="24" height="8" fill="#F1BF00" />
+            </svg>
+            <span>ES</span>
+          </button>
+        </div>
+
+        <a href="https://github.com/claudsan/hooksmith" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section & Interactive Live Simulator -->
+  <main>
+    <div class="container hero">
+      <div class="hero-badges">
+        <span class="pill-badge ok" data-i18n="badge_local">100% Local & Offline</span>
+        <span class="pill-badge" data-i18n="badge_privacy">Zero Nuvem • Zero Telemetria</span>
+        <span class="pill-badge brand" data-i18n="badge_dev">Feito de Dev para Dev</span>
+      </div>
+
+      <img src="assets/hooksmith-logo.png" alt="Hooksmith Logo" class="hero-logo" />
+
+      <h1 data-i18n="hero_title">
+        A Forja Local de <span class="accent">APIs & Webhooks</span> sem dor de cabeça.
+      </h1>
+
+      <p class="hero-subtitle" data-i18n="hero_subtitle">
+        Intercepte, inspecione, simule mocks com SSL/HTTPS automático, dispare callbacks assíncronos e faça replay de requisições em tempo real — direto no seu desktop.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#manual" class="btn btn-primary" data-i18n="cta_manual">📖 Ler Manual de Uso</a>
+        <a href="https://github.com/claudsan/hooksmith" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="cta_github">⭐ Ver no GitHub</a>
+      </div>
+
+      <p style="font-size:0.84rem;color:var(--brand);margin-bottom:10px;font-weight:600;" data-i18n="sim_hint">
+        💡 Simulador Interativo: Clique nas requisições ou nas regras de mock abaixo para inspecionar e testar o botão Pretty/Raw!
+      </p>
+
+      <!-- Interactive Hooksmith Desktop Mockup -->
+      <div class="app-window">
+        <div class="app-titlebar">
+          <div class="window-dots">
+            <span class="win-dot" style="background:#F43F5E;"></span>
+            <span class="win-dot" style="background:#F59E0B;"></span>
+            <span class="win-dot" style="background:#10B981;"></span>
+            <span style="margin-left:8px;font-weight:700;color:var(--fg);">Hooksmith — Default Local Workspace</span>
+          </div>
+          <div class="app-search-mock">
+            <span>🔍 Search path, body or status...</span>
+            <span>Ctrl K</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-family:var(--font-mono);font-size:0.72rem;color:#6EE7B7;">● 2 Ports Active</span>
+          </div>
+        </div>
+
+        <div class="app-workspace">
+          <!-- Column 1: Sidebar (Listeners & Mock Rules) -->
+          <div class="app-col" style="background:#0C0F14;">
+            <div class="col-header">
+              <span>LISTENERS (2)</span>
+              <span style="color:var(--brand);">+</span>
+            </div>
+
+            <div class="sim-card" style="cursor:default;">
+              <div class="sim-row" style="justify-content:space-between;">
+                <strong style="font-size:0.8rem;">🔒 Gateway Pagamentos</strong>
+                <span style="color:var(--ok);font-family:var(--font-mono);font-size:0.68rem;font-weight:700;">LIVE</span>
+              </div>
+              <div class="sim-row" style="margin-top:5px;">
+                <span style="font-family:var(--font-mono);font-weight:700;">:8443</span>
+                <span class="ssl-tag">HTTPS</span>
+              </div>
+            </div>
+
+            <div class="sim-card" style="cursor:default;">
+              <div class="sim-row" style="justify-content:space-between;">
+                <strong style="font-size:0.8rem;">⚡ Backend Callback</strong>
+                <span style="color:var(--ok);font-family:var(--font-mono);font-size:0.68rem;font-weight:700;">LIVE</span>
+              </div>
+              <div class="sim-row" style="margin-top:5px;">
+                <span style="font-family:var(--font-mono);font-weight:700;">:4010</span>
+                <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">HTTP</span>
+              </div>
+            </div>
+
+            <div class="col-header" style="margin-top:14px;border-top:1px solid var(--line);">
+              <span>MOCK RULES (2)</span>
+              <span style="color:var(--brand);">+</span>
+            </div>
+
+            <div class="sim-card" data-sim-item="mock1" onclick="selectSimItem('mock1')">
+              <div class="sim-row" style="justify-content:space-between;">
+                <strong style="font-size:0.8rem;">Approve Pix + Callback</strong>
+                <span style="font-size:0.75rem;" title="Editar regra">✏️</span>
+              </div>
+              <div class="sim-row" style="margin-top:6px;">
+                <span class="method-badge method-POST">POST</span>
+                <span style="font-family:var(--font-mono);font-size:0.74rem;color:var(--fg-muted);">/webhooks/payment</span>
+              </div>
+              <div class="sim-row" style="margin-top:6px;">
+                <span class="tip-chip" style="padding:1px 6px;font-size:0.68rem;color:#34D399;">200</span>
+                <span class="ssl-tag">🔒 :8443 SSL</span>
+                <span class="cb-tag">🚀 CB</span>
+              </div>
+            </div>
+
+            <div class="sim-card" data-sim-item="mock2" onclick="selectSimItem('mock2')">
+              <div class="sim-row" style="justify-content:space-between;">
+                <strong style="font-size:0.8rem;">Erro Gateway (503)</strong>
+                <span style="font-size:0.75rem;" title="Editar regra">✏️</span>
+              </div>
+              <div class="sim-row" style="margin-top:6px;">
+                <span class="method-badge method-POST">POST</span>
+                <span style="font-family:var(--font-mono);font-size:0.74rem;color:var(--fg-muted);">/webhooks/gateway</span>
+              </div>
+              <div class="sim-row" style="margin-top:6px;">
+                <span class="tip-chip" style="padding:1px 6px;font-size:0.68rem;color:#FB7185;">503</span>
+                <span class="ssl-tag">🔒 :8443 SSL</span>
+                <span class="tip-chip" style="padding:1px 6px;font-size:0.65rem;">800ms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Live Traffic Stream -->
+          <div class="app-col" style="background:#0E1117;">
+            <div class="col-header">
+              <span>⚡ LIVE TRAFFIC (3)</span>
+              <span>All • POST • Errors</span>
+            </div>
+
+            <div class="traffic-item active" data-sim-item="req1" onclick="selectSimItem('req1')">
+              <div class="sim-row" style="justify-content:space-between;">
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <span class="method-badge method-POST">POST</span>
+                  <span style="font-family:var(--font-mono);font-size:0.78rem;font-weight:600;">/webhooks/payment</span>
+                </div>
+                <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">now</span>
+              </div>
+              <div class="sim-row" style="margin-top:6px;justify-content:space-between;">
+                <span style="font-family:var(--font-mono);font-size:0.73rem;color:var(--ok);">● 200 OK · 12ms</span>
+                <div style="display:flex;align-items:center;gap:5px;">
+                  <span class="source-tag tag-MOCKED">MOCKED</span>
+                  <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">:8443</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="traffic-item" data-sim-item="req2" onclick="selectSimItem('req2')">
+              <div class="sim-row" style="justify-content:space-between;">
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <span class="method-badge method-POST">POST</span>
+                  <span style="font-family:var(--font-mono);font-size:0.78rem;font-weight:600;">/api/orders/callback</span>
+                </div>
+                <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">1s ago</span>
+              </div>
+              <div class="sim-row" style="margin-top:6px;justify-content:space-between;">
+                <span style="font-family:var(--font-mono);font-size:0.73rem;color:var(--ok);">● 201 Created · 8ms</span>
+                <div style="display:flex;align-items:center;gap:5px;">
+                  <span class="source-tag tag-CALLBACK">CALLBACK</span>
+                  <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">:4010</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="traffic-item" data-sim-item="req3" onclick="selectSimItem('req3')">
+              <div class="sim-row" style="justify-content:space-between;">
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <span class="method-badge method-POST">POST</span>
+                  <span style="font-family:var(--font-mono);font-size:0.78rem;font-weight:600;">/webhooks/gateway</span>
+                </div>
+                <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">3m ago</span>
+              </div>
+              <div class="sim-row" style="margin-top:6px;justify-content:space-between;">
+                <span style="font-family:var(--font-mono);font-size:0.73rem;color:var(--err);">● 503 Error · 804ms</span>
+                <div style="display:flex;align-items:center;gap:5px;">
+                  <span class="source-tag tag-CAPTURED">CAPTURED</span>
+                  <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--fg-subtle);">:8443</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Dynamic Request / Mock Inspector -->
+          <div class="app-col">
+            <div id="sim-inspector" class="inspector-pane"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. The Story Section ("De Dev para Dev") -->
+    <section id="story">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="story_eyebrow">☕ DE DEV PARA DEV</span>
+          <h2 data-i18n="story_title">Nascido da frustração real com o WireMock e túneis na nuvem</h2>
+          <p data-i18n="story_desc">
+            Quem já desenvolveu integrações com gateways de pagamento, ERPs ou sistemas de mensageria conhece bem o sofrimento de testar webhooks localmente.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-card pain">
+            <h3 data-i18n="pain_title">❌ O Sofrimento Antigo (WireMock & Túneis)</h3>
+            <ul class="story-list">
+              <li><span>•</span><span data-i18n="pain_1"><strong>O Dilema do WireMock:</strong> Dezenas de linhas em Java ou JSONs quilométricos de mapeamento e containers Docker pesados apenas para responder um simples <code>200 OK</code>.</span></li>
+              <li><span>•</span><span data-i18n="pain_2"><strong>A Cegueira do Terminal:</strong> Ficar olhando logs no console sem saber se o webhook chegou, se faltou header ou se o payload veio truncado.</span></li>
+              <li><span>•</span><span data-i18n="pain_3"><strong>O Pesadelo Assíncrono:</strong> Criar scripts improvisados ou controllers fakes para simular um gateway que responde <code>200 OK</code> e manda um POST de confirmação 3 segundos depois.</span></li>
+              <li><span>•</span><span data-i18n="pain_4"><strong>Dependência de Túneis:</strong> URLs rotativas que mudam a cada reinício, limites de requisição e dados sensíveis trafegando em servidores de terceiros.</span></li>
+            </ul>
+          </div>
+
+          <div class="story-card forge">
+            <h3 data-i18n="forge_title">🔥 O Jeito Hooksmith</h3>
+            <ul class="story-list">
+              <li><span>✓</span><span data-i18n="forge_1"><strong>Portas HTTP & HTTPS em 2 Cliques:</strong> Crie listeners locais com certificado SSL auto-assinado emitido automaticamente.</span></li>
+              <li><span>✓</span><span data-i18n="forge_2"><strong>Visibilidade Total em Tempo Real:</strong> Veja método, rota, status, tempo em ms, data/hora exata da chamada e payload com syntax highlighting.</span></li>
+              <li><span>✓</span><span data-i18n="forge_3"><strong>Callbacks Assíncronos Nativos:</strong> Configure na própria regra de mock a URL, método, delay e payload que o Hooksmith deve disparar após responder.</span></li>
+              <li><span>✓</span><span data-i18n="forge_4"><strong>Inspeção & Replay Instantâneo:</strong> Clique num mock para inspecionar seus detalhes, redimensione o painel Request/Response e formate JSON com 1 clique.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Features Grid -->
+    <section id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="feat_eyebrow">🚀 RECURSOS PRINCIPAIS</span>
+          <h2 data-i18n="feat_title">Tudo o que você precisa para dominar integrações</h2>
+          <p data-i18n="feat_subtitle">
+            Projetado para substituir múltiplos scripts, containers de mock e ferramentas dispersas por uma única interface coesa.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3 data-i18n="f1_title">Listeners HTTP & HTTPS (Auto SSL)</h3>
+            <p data-i18n="f1_desc">Abra quantas portas locais quiser. Ative HTTPS e o Hooksmith gera e gerencia os certificados SSL locais automaticamente.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">↕️</div>
+            <h3 data-i18n="f2_title">Painel Redimensionável & Data/Hora</h3>
+            <p data-i18n="f2_desc">Divisor arrastável entre Request e Response (duplo clique para 50%/50%), registro de data/hora exata da chamada e editor Monaco.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3 data-i18n="f3_title">Prettify JSON Inteligente</h3>
+            <p data-i18n="f3_desc">JSONs minificados são exibidos formatados por padrão. Alterne entre Pretty e Raw em 1 clique e copie já indentado.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3 data-i18n="f4_title">Inspeção de Mocks + Tag SSL</h3>
+            <p data-i18n="f4_desc">Clique em qualquer regra na Sidebar para inspecioná-la no painel direito sem abrir o editor por engano. Veja a porta e a badge SSL.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3 data-i18n="f5_title">Callbacks Assíncronos por Regra</h3>
+            <p data-i18n="f5_desc">Simule o ciclo completo de gateways (Pix, Stripe, MercadoPago): o mock responde na hora e dispara um webhook de callback após o delay configurado.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 data-i18n="f6_title">Edit & Replay Instantâneo</h3>
+            <p data-i18n="f6_desc">Modifique o body ou os headers de qualquer requisição capturada e reenvie-a com Ctrl+Enter para testar seu backend.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Step-by-Step User Manual -->
+    <section id="manual">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="man_eyebrow">📖 GUIA PASSO A PASSO</span>
+          <h2 data-i18n="man_title">Manual Prático de Uso</h2>
+          <p data-i18n="man_subtitle">Domine todo o fluxo de trabalho do Hooksmith em poucos minutos.</p>
+        </div>
+
+        <div class="manual-steps">
+          <div class="manual-step">
+            <div class="step-num">01</div>
+            <div>
+              <h3 data-i18n="m1_title">Criando e Gerenciando Listeners (HTTP & HTTPS)</h3>
+              <p data-i18n="m1_desc">
+                Na barra lateral esquerda, clique em "+" em Listeners. Defina um nome amigável (ex: Gateway Pagamento), escolha a porta (ex: 4010 ou 8443) e marque a opção HTTPS/SSL se desejar criptografia local automática.
+              </p>
+              <div class="manual-tips">
+                <span class="tip-chip">HTTP / HTTPS</span>
+                <span class="tip-chip">Zero-Config Self-Signed Cert</span>
+                <span class="tip-chip">Live Toggle</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-step">
+            <div class="step-num">02</div>
+            <div>
+              <h3 data-i18n="m2_title">Monitorando o Live Traffic e Filtros</h3>
+              <p data-i18n="m2_desc">
+                Toda chamada recebida aparece instantaneamente na coluna central com método, rota, status HTTP, latência e tag de origem (CAPTURED, MOCKED, REPLAY ou CALLBACK). Use a busca (Ctrl+K) ou os filtros rápidos.
+              </p>
+              <div class="manual-tips">
+                <span class="tip-chip">CAPTURED</span>
+                <span class="tip-chip">MOCKED</span>
+                <span class="tip-chip">CALLBACK</span>
+                <span class="tip-chip">REPLAY</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-step">
+            <div class="step-num">03</div>
+            <div>
+              <h3 data-i18n="m3_title">Inspecionando Payloads, Redimensionando e Formatando JSON</h3>
+              <p data-i18n="m3_desc">
+                Ao clicar em uma requisição, o painel direito mostra a data e hora exatas da chamada. Arraste a barra divisória horizontal entre Request e Response para ampliar payloads extensos e use o botão "Pretty" para formatar JSON.
+              </p>
+              <div class="manual-tips">
+                <span class="tip-chip">📅 Data & Hora Exatas</span>
+                <span class="tip-chip">↕️ Split Redimensionável (50%/50%)</span>
+                <span class="tip-chip">✨ Pretty / Raw JSON</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-step">
+            <div class="step-num">04</div>
+            <div>
+              <h3 data-i18n="m4_title">Inspecionando e Editando Regras de Mock</h3>
+              <p data-i18n="m4_desc">
+                Clique em um card em "Mock Rules" para visualizar todos os seus detalhes e comando cURL no Painel de Inspeção. Ao lado da porta, a tag SSL indica listeners seguros. Para editar, clique no ícone de lápis ou em "Editar Regra".
+              </p>
+              <div class="manual-tips">
+                <span class="tip-chip">🔍 Mock Inspector (Read-Only)</span>
+                <span class="tip-chip">🔒 Tag SSL por Porta</span>
+                <span class="tip-chip">✏️ Edição Explícita</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-step">
+            <div class="step-num">05</div>
+            <div>
+              <h3 data-i18n="m5_title">Configurando Callbacks Assíncronos Automatizados</h3>
+              <p data-i18n="m5_desc">
+                Dentro do editor de Mock, ative "Callback Assíncrono". Informe o método (POST/PUT), a URL do seu backend local, o delay em milissegundos e o JSON do evento. O Hooksmith disparará o callback automaticamente após responder o mock.
+              </p>
+              <div class="manual-tips">
+                <span class="tip-chip">🚀 Webhook Callback</span>
+                <span class="tip-chip">⏱ Delay Configurável (ms)</span>
+                <span class="tip-chip">Payload JSON Customizado</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="manual-step">
+            <div class="step-num">06</div>
+            <div>
+              <h3 data-i18n="m6_title">Edit & Replay de Requisições</h3>
+              <p data-i18n="m6_desc">
+                Selecione qualquer requisição capturada, clique em "Edit & Replay", ajuste o JSON ou cabeçalhos no editor Monaco e pressione Ctrl+Enter para disparar a nova chamada.
+              </p>
+              <div class="manual-tips">
+                <span class="tip-chip">Monaco Editor</span>
+                <span class="tip-chip">Ctrl + Enter</span>
+                <span class="tip-chip">Save as Mock</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Keyboard Shortcuts & Privacy -->
+    <section id="shortcuts">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow" data-i18n="sc_eyebrow">⌨️ PRODUTIVIDADE</span>
+          <h2 data-i18n="sc_title">Atalhos de Teclado & Armazenamento Local</h2>
+        </div>
+
+        <div class="shortcuts-grid">
+          <div class="shortcut-item">
+            <span data-i18n="sc_replay">Disparar Replay da requisição selecionada</span>
+            <kbd>Ctrl + Enter</kbd>
+          </div>
+          <div class="shortcut-item">
+            <span data-i18n="sc_mock">Abrir modal de Nova Regra de Mock</span>
+            <kbd>Ctrl + M</kbd>
+          </div>
+          <div class="shortcut-item">
+            <span data-i18n="sc_search">Focar na busca global de tráfego</span>
+            <kbd>Ctrl + K</kbd>
+          </div>
+          <div class="shortcut-item">
+            <span data-i18n="sc_clear">Limpar histórico de tráfego capturado</span>
+            <kbd>Ctrl + L</kbd>
+          </div>
+          <div class="shortcut-item">
+            <span data-i18n="sc_esc">Fechar modal ou desmarcar inspeção</span>
+            <kbd>Esc</kbd>
+          </div>
+          <div class="shortcut-item">
+            <span data-i18n="sc_zoom">Ajustar zoom da interface</span>
+            <kbd>Ctrl + / -</kbd>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;background:var(--bg-panel);border:1px solid var(--line);border-radius:12px;padding:22px;text-align:center;">
+          <p style="font-family:var(--font-mono);font-size:0.82rem;color:var(--fg-muted);">
+            🔒 <strong>SQLite Local Storage:</strong>
+            Windows: <code>%APPDATA%/Hooksmith/hooksmith.db</code> •
+            macOS: <code>~/Library/Application Support/Hooksmith/hooksmith.db</code> •
+            Linux: <code>~/.config/Hooksmith/hooksmith.db</code>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        <strong>Hooksmith</strong> — Local API & Webhook Forge • MIT License •
+        <a href="https://github.com/claudsan/hooksmith" style="color:var(--brand);text-decoration:none;">GitHub Repository</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
