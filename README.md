@@ -9,7 +9,8 @@
 <p align="center">
   <a href="README.pt-BR.md">🇧🇷 Versão em Português</a> •
   <a href="README.md">🇺🇸 English Version</a> •
-  <a href="https://claudsan.github.io/hooksmith/">🌐 Official Website & Interactive Manual</a>
+  <a href="CONTRIBUTING.md">🛠️ Technical Architecture & Contributor Guide</a> •
+  <a href="https://claudsan.github.io/hooksmith/">🌐 Official Website</a>
 </p>
 
 ---
@@ -205,6 +206,8 @@ No telemetry, analytics, or external network requests are ever made by the core 
 
 **Hooksmith is 100% Open Source (MIT License)** and built by developers, for developers. Everyone is welcome to contribute and help make Hooksmith even better!
 
+> 🛠️ **Read our [Technical Documentation & Architecture Guide (`CONTRIBUTING.md`)](CONTRIBUTING.md)** to learn about our tech stack (Electron, React 19, Fastify, SQLite WAL, Monaco, Undici), internal architecture diagrams, and how to run and contribute to the project locally.
+
 - 🍴 **Submit a Pull Request:** Want to help build the **Apache Kafka**, **RabbitMQ**, or **Cron Scheduler** integrations, or polish the UI? Fork the repo and open a PR!
 - 💡 **Suggest Ideas & Report Bugs:** Open an issue on [GitHub Issues](https://github.com/claudsan/hooksmith/issues) to share feedback or request new features.
 - ⭐ **Support the Project:** If Hooksmith saves you time debugging webhooks, give the repository a star on GitHub!
@@ -214,6 +217,8 @@ No telemetry, analytics, or external network requests are ever made by the core 
 ## 🤝 100% Open Source — Contribute to Hooksmith!
 
 **Hooksmith is 100% Open Source (MIT License)** and built by developers, for developers. Everyone is welcome to contribute and help make Hooksmith even better!
+
+> 🛠️ **Read our [Technical Documentation & Architecture Guide (`CONTRIBUTING.md`)](CONTRIBUTING.md)** to learn about our tech stack (Electron, React 19, Fastify, SQLite WAL, Monaco, Undici), internal architecture diagrams, and how to run and contribute to the project locally.
 
 - 🍴 **Submit a Pull Request:** Want to help build the **Apache Kafka**, **RabbitMQ**, or **Cron Scheduler** integrations, or polish the UI? Fork the repo and open a PR!
 - 💡 **Suggest Ideas & Report Bugs:** Open an issue on [GitHub Issues](https://github.com/claudsan/hooksmith/issues) to share feedback or request new features.

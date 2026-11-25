@@ -9,7 +9,8 @@
 <p align="center">
   <a href="README.pt-BR.md">🇧🇷 Versão em Português</a> •
   <a href="README.md">🇺🇸 English Version</a> •
-  <a href="https://claudsan.github.io/hooksmith/">🌐 Site Oficial & Manual Interativo</a>
+  <a href="CONTRIBUTING.pt-BR.md">🛠️ Documentação Técnica & Arquitetura</a> •
+  <a href="https://claudsan.github.io/hooksmith/">🌐 Site Oficial</a>
 </p>
 
 ---
@@ -194,6 +195,8 @@ Nenhum dado trafega para servidores externos.
 ## 🤝 100% Open Source — Contribua com o Projeto!
 
 O **Hooksmith é 100% Open Source (Licença MIT)**, feito de dev para dev. Qualquer pessoa pode contribuir e ajudar a evoluir a ferramenta!
+
+> 🛠️ **Acesse nossa [Documentação Técnica & Guia de Arquitetura (`CONTRIBUTING.pt-BR.md`)](CONTRIBUTING.pt-BR.md)** para conhecer toda a nossa stack (Electron, React 19, Fastify, SQLite WAL, Monaco, Undici), diagramas de arquitetura, estrutura de pastas e instruções de desenvolvimento local.
 
 - 🍴 **Envie um Pull Request:** Quer ajudar a construir as integrações com **Apache Kafka**, **RabbitMQ**, **Agendamento de Chamadas** ou melhorar a interface? Faça um fork do projeto e envie seu PR!
 - 💡 **Sugira Funcionalidades ou Reporte Bugs:** Abra uma issue em [GitHub Issues](https://github.com/claudsan/hooksmith/issues) com suas ideias e feedbacks.
