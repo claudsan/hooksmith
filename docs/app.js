@@ -3,15 +3,26 @@ const I18N = {
     nav_story: 'A Origem',
     nav_features: 'Funcionalidades',
     nav_manual: 'Manual de Uso',
+    nav_roadmap: 'Novidades',
     nav_shortcuts: 'Atalhos',
     badge_local: '100% Local & Offline',
     badge_privacy: 'Zero Nuvem • Zero Telemetria',
     badge_dev: 'Feito de Dev para Dev',
+    badge_oss: '💚 100% Open Source (MIT)',
     hero_title: 'A Forja Local de <span class="accent">APIs & Webhooks</span> sem dor de cabeça.',
     hero_subtitle:
       'Intercepte, inspecione, simule mocks com SSL/HTTPS automático, dispare callbacks assíncronos e faça replay de requisições em tempo real — direto no seu desktop.',
     cta_manual: '📖 Ler Manual de Uso',
     cta_github: '⭐ Ver no GitHub',
+    car_eyebrow: '📸 INTERFACE REAL DA APLICAÇÃO',
+    car_t1: 'Dashboard & Live Traffic',
+    car_d1: '<strong>1. Visão Geral & Live Traffic:</strong> Listeners HTTP e HTTPS (com SSL automático), regras de mock com badges SSL/Callback e gerador de comando cURL de teste.',
+    car_t2: 'Inspeção Request & Response',
+    car_d2: '<strong>2. Request & Response Inspector:</strong> Data e hora exatas da chamada, JSON formatado com botão Pretty no Monaco Editor e divisor horizontal redimensionável.',
+    car_t3: 'Inspeção de Mock & Callback',
+    car_d3: '<strong>3. Mock Inspector (Modo Leitura):</strong> Clique na regra para inspecionar rota, porta SSL, payload do Callback Assíncrono configurado e resposta simulada.',
+    car_t4: 'Editor de Mock & Callback',
+    car_d4: '<strong>4. Editor de Regra de Mock:</strong> Configure status HTTP, latência simulada (delay), cabeçalhos e dispare callbacks assíncronos automáticos.',
     sim_hint: '💡 Simulador Interativo: Clique nas requisições ou nas regras de mock abaixo para inspecionar e testar o botão Pretty/Raw!',
     story_eyebrow: '☕ DE DEV PARA DEV',
     story_title: 'Nascido da frustração real com o WireMock e túneis na nuvem',
@@ -57,6 +68,21 @@ const I18N = {
     m5_desc: 'Dentro do editor de Mock, ative "Callback Assíncrono". Informe o método (POST/PUT), a URL do seu backend local, o delay em milissegundos e o JSON do evento. O Hooksmith disparará o callback automaticamente após responder o mock.',
     m6_title: 'Edit & Replay de Requisições',
     m6_desc: 'Selecione qualquer requisição capturada, clique em "Edit & Replay", ajuste o JSON ou cabeçalhos no editor Monaco e pressione Ctrl+Enter para disparar a nova chamada.',
+    rd_eyebrow: '🔮 O QUE VEM POR AÍ • ROADMAP & BACKLOG',
+    rd_title: 'Muito além do HTTP: Mensageria & Automação Local',
+    rd_subtitle: 'O Hooksmith está evoluindo para unificar webhooks, filas de mensageria e disparos agendados em uma única forja 100% local.',
+    rd_soon: 'Em Breve',
+    rd1_title: 'Integração com Apache Kafka',
+    rd1_desc: 'Conecte-se a brokers Kafka locais ou de desenvolvimento para inspecionar mensagens em tópicos, publicar eventos JSON com 1 clique e criar pontes automáticas (Webhook HTTP ➔ Tópico Kafka).',
+    rd2_title: 'Integração com RabbitMQ',
+    rd2_desc: 'Monitore exchanges e filas AMQP em tempo real, simule consumidores locais, inspecione Dead Letter Queues (DLQ) e dispare mensagens diretamente em filas quando uma regra de mock for acionada.',
+    rd3_title: 'Agendamento de Chamadas & Cron',
+    rd3_desc: 'Programe disparos periódicos de webhooks (Cron Jobs), baterias de testes automatizadas e simulações realistas de retentativas (exponential backoff) sem precisar de scripts externos.',
+    oss_badge: '💚 100% OPEN SOURCE • LICENÇA MIT',
+    oss_title: 'Construído pela comunidade, para a comunidade — Contribua!',
+    oss_desc: 'O Hooksmith é 100% código aberto. Qualquer desenvolvedor pode contribuir com código, implementar novas integrações do backlog (como Kafka e RabbitMQ), sugerir melhorias ou reportar bugs no GitHub.',
+    oss_btn_fork: '🍴 Contribuir no GitHub',
+    oss_btn_issues: '💡 Sugerir Feature / Issue',
     sc_eyebrow: '⌨️ PRODUTIVIDADE',
     sc_title: 'Atalhos de Teclado & Armazenamento Local',
     sc_replay: 'Disparar Replay da requisição selecionada',
@@ -70,15 +96,26 @@ const I18N = {
     nav_story: 'The Origin',
     nav_features: 'Capabilities',
     nav_manual: 'User Manual',
+    nav_roadmap: "What's Next",
     nav_shortcuts: 'Shortcuts',
     badge_local: '100% Local & Offline',
     badge_privacy: 'Zero Cloud • Zero Telemetry',
     badge_dev: 'Built by Devs, for Devs',
+    badge_oss: '💚 100% Open Source (MIT)',
     hero_title: 'The Local <span class="accent">API & Webhook Forge</span> without the headache.',
     hero_subtitle:
       'Intercept, inspect, mock with zero-config SSL/HTTPS, trigger automated asynchronous callbacks, and replay requests in real time — right on your desktop.',
     cta_manual: '📖 Read User Manual',
     cta_github: '⭐ View on GitHub',
+    car_eyebrow: '📸 REAL APPLICATION SCREENSHOTS',
+    car_t1: 'Dashboard & Live Traffic',
+    car_d1: '<strong>1. Overview & Live Traffic:</strong> HTTP & HTTPS listeners (with automated SSL), mock rules with SSL/Callback badges, and quick test cURL generator.',
+    car_t2: 'Request & Response Inspector',
+    car_d2: '<strong>2. Request & Response Inspector:</strong> Exact call date/time badge, Pretty-formatted JSON in Monaco Editor, and resizable horizontal split.',
+    car_t3: 'Mock & Callback Inspector',
+    car_d3: '<strong>3. Mock Inspector (Read-Only):</strong> Click a rule to inspect route, SSL port, configured Asynchronous Callback payload, and simulated response.',
+    car_t4: 'Mock & Callback Editor',
+    car_d4: '<strong>4. Mock Rule Editor:</strong> Configure HTTP status code, simulated network delay, headers, and automated asynchronous webhook callbacks.',
     sim_hint: '💡 Interactive Simulator: Click on the captured requests or mock rules below to inspect them and test the Pretty/Raw toggle!',
     story_eyebrow: '☕ BUILT BY DEVS, FOR DEVS',
     story_title: 'Born from the real frustration of WireMock and cloud tunnels',
@@ -124,6 +161,21 @@ const I18N = {
     m5_desc: 'Inside the Mock Editor, enable "Asynchronous Callback". Set the method (POST/PUT), your local backend URL, the delay in ms, and the JSON payload. Hooksmith will fire the callback automatically after answering the mock.',
     m6_title: 'Editing & Replaying Requests',
     m6_desc: 'Select any captured request, click "Edit & Replay", tweak the JSON body or headers in the Monaco editor, and press Ctrl+Enter to fire.',
+    rd_eyebrow: "🔮 WHAT'S COMING NEXT • FUTURE ROADMAP",
+    rd_title: 'Beyond HTTP: Event Brokers & Scheduled Automation',
+    rd_subtitle: 'Hooksmith is evolving to unify webhooks, message brokers, and scheduled triggers into a single 100% local desktop forge.',
+    rd_soon: 'Coming Soon',
+    rd1_title: 'Apache Kafka Integration',
+    rd1_desc: 'Connect to local or dev Kafka clusters to inspect topic streams in real time, publish JSON events in one click, and bridge incoming HTTP webhooks directly into Kafka topics.',
+    rd2_title: 'RabbitMQ & AMQP Integration',
+    rd2_desc: 'Monitor AMQP exchanges and queues visually, inspect Dead Letter Queues (DLQ), simulate queue consumers, and publish messages to RabbitMQ whenever a mock rule is triggered.',
+    rd3_title: 'Scheduled Calls & Cron Jobs',
+    rd3_desc: 'Schedule recurring webhook calls, automated test suites, and realistic retry policies (exponential backoff) natively without writing external cron scripts.',
+    oss_badge: '💚 100% OPEN SOURCE • MIT LICENSE',
+    oss_title: 'Built by the community, for the community — Join Us!',
+    oss_desc: 'Hooksmith is 100% open source. Anyone can contribute code, help build upcoming backlog integrations (like Kafka & RabbitMQ), suggest improvements, or open Pull Requests on GitHub.',
+    oss_btn_fork: '🍴 Contribute on GitHub',
+    oss_btn_issues: '💡 Suggest Feature / Issue',
     sc_eyebrow: '⌨️ PRODUCTIVITY',
     sc_title: 'Keyboard Shortcuts & Local Storage',
     sc_replay: 'Fire Replay of the selected request',
@@ -137,15 +189,26 @@ const I18N = {
     nav_story: 'El Origen',
     nav_features: 'Funcionalidades',
     nav_manual: 'Manual de Uso',
+    nav_roadmap: 'Novedades',
     nav_shortcuts: 'Atajos',
     badge_local: '100% Local y Offline',
     badge_privacy: 'Cero Nube • Cero Telemetría',
     badge_dev: 'Hecho de Dev para Dev',
+    badge_oss: '💚 100% Open Source (MIT)',
     hero_title: 'La Forja Local de <span class="accent">APIs y Webhooks</span> sin dolores de cabeza.',
     hero_subtitle:
       'Intercepta, inspecciona, simula mocks con SSL/HTTPS automático, dispara callbacks asíncronos y repite peticiones en tiempo real — directo en tu escritorio.',
     cta_manual: '📖 Leer Manual de Uso',
     cta_github: '⭐ Ver en GitHub',
+    car_eyebrow: '📸 INTERFAZ REAL DE LA APLICACIÓN',
+    car_t1: 'Dashboard y Live Traffic',
+    car_d1: '<strong>1. Vista General y Live Traffic:</strong> Listeners HTTP y HTTPS (con SSL automático), reglas de mock con etiquetas SSL/Callback y generador de comando cURL.',
+    car_t2: 'Inspección Request y Response',
+    car_d2: '<strong>2. Request & Response Inspector:</strong> Fecha y hora exactas de la llamada, JSON formateado con botón Pretty en Monaco Editor y divisor horizontal redimensionable.',
+    car_t3: 'Inspector de Mock y Callback',
+    car_d3: '<strong>3. Mock Inspector (Modo Lectura):</strong> Haz clic en una regla para inspeccionar ruta, puerto SSL, payload del Callback Asíncrono y respuesta simulada.',
+    car_t4: 'Editor de Mock y Callback',
+    car_d4: '<strong>4. Editor de Regla de Mock:</strong> Configura código de estado HTTP, latencia simulada (delay), cabeceras y callbacks asíncronos automáticos.',
     sim_hint: '💡 Simulador Interactivo: ¡Haz clic en las peticiones o reglas de mock abajo para inspeccionarlas y probar el botón Pretty/Raw!',
     story_eyebrow: '☕ DE DEV PARA DEV',
     story_title: 'Nacido de la frustración real con WireMock y túneles en la nube',
@@ -191,6 +254,21 @@ const I18N = {
     m5_desc: 'En el editor de Mock, activa "Callback Asíncrono". Indica método, URL de destino, retraso en ms y JSON. Hooksmith disparará el callback automáticamente.',
     m6_title: 'Edición y Replay de Peticiones',
     m6_desc: 'Selecciona una petición capturada, haz clic en "Edit & Replay", ajusta el JSON o cabeceras y presiona Ctrl+Enter.',
+    rd_eyebrow: '🔮 PRÓXIMAS NOVEDADES • ROADMAP Y BACKLOG',
+    rd_title: 'Más allá de HTTP: Mensajería y Automatización Local',
+    rd_subtitle: 'Hooksmith evoluciona para unificar webhooks, colas de mensajería y llamadas programadas en una única forja 100% local.',
+    rd_soon: 'Próximamente',
+    rd1_title: 'Integración con Apache Kafka',
+    rd1_desc: 'Conéctate a brokers Kafka locales para inspeccionar mensajes en tópicos, publicar eventos JSON en 1 clic y crear puentes automáticos (Webhook HTTP ➔ Tópico Kafka).',
+    rd2_title: 'Integración con RabbitMQ',
+    rd2_desc: 'Monitorea exchanges y colas AMQP en tiempo real, inspecciona Dead Letter Queues (DLQ) y publica mensajes directamente en colas cuando se active una regla de mock.',
+    rd3_title: 'Programación de Llamadas y Cron',
+    rd3_desc: 'Programa disparos periódicos de webhooks (Cron Jobs), baterías de pruebas automatizadas y simulaciones de reintentos (exponential backoff) sin scripts externos.',
+    oss_badge: '💚 100% OPEN SOURCE • LICENCIA MIT',
+    oss_title: 'Construido por la comunidad, para la comunidad — ¡Contribuye!',
+    oss_desc: 'Hooksmith es 100% código abierto. Cualquier persona puede contribuir con código, ayudar a construir las integraciones del backlog (Kafka y RabbitMQ), sugerir mejoras o enviar Pull Requests en GitHub.',
+    oss_btn_fork: '🍴 Contribuir en GitHub',
+    oss_btn_issues: '💡 Sugerir Mejora / Issue',
     sc_eyebrow: '⌨️ PRODUCTIVIDAD',
     sc_title: 'Atajos de Teclado y Almacenamiento Local',
     sc_replay: 'Ejecutar Replay de la petición seleccionada',
@@ -400,6 +478,79 @@ function renderSimulatorInspector() {
   }
 }
 
+let currentSlideIndex = 0;
+let carouselTimer = null;
+const SLIDE_CAPTION_KEYS = ['car_d1', 'car_d2', 'car_d3', 'car_d4'];
+
+function goToSlide(index) {
+  currentSlideIndex = (index + 4) % 4;
+  document.querySelectorAll('[data-slide]').forEach((el) => {
+    el.classList.toggle('active', Number(el.getAttribute('data-slide')) === currentSlideIndex);
+  });
+  document.querySelectorAll('[data-slide-tab]').forEach((el) => {
+    el.classList.toggle('active', Number(el.getAttribute('data-slide-tab')) === currentSlideIndex);
+  });
+  document.querySelectorAll('[data-slide-dot]').forEach((el) => {
+    el.classList.toggle('active', Number(el.getAttribute('data-slide-dot')) === currentSlideIndex);
+  });
+  const captionEl = document.getElementById('carousel-caption');
+  const key = SLIDE_CAPTION_KEYS[currentSlideIndex];
+  if (captionEl && I18N[currentLang] && I18N[currentLang][key]) {
+    captionEl.setAttribute('data-i18n', key);
+    captionEl.innerHTML = I18N[currentLang][key];
+  }
+}
+
+function nextSlide() {
+  goToSlide(currentSlideIndex + 1);
+}
+
+function prevSlide() {
+  goToSlide(currentSlideIndex - 1);
+}
+
+function startCarouselAutoPlay() {
+  stopCarouselAutoPlay();
+  carouselTimer = setInterval(() => {
+    nextSlide();
+  }, 6000);
+}
+
+function stopCarouselAutoPlay() {
+  if (carouselTimer) {
+    clearInterval(carouselTimer);
+    carouselTimer = null;
+  }
+}
+
+function pauseCarousel() {
+  stopCarouselAutoPlay();
+}
+
+function resumeCarousel() {
+  startCarouselAutoPlay();
+}
+
+function openLightbox(src) {
+  const modal = document.getElementById('lightbox-modal');
+  const img = document.getElementById('lightbox-img');
+  if (modal && img) {
+    img.src = src;
+    modal.classList.add('open');
+  }
+}
+
+function closeLightbox() {
+  const modal = document.getElementById('lightbox-modal');
+  if (modal) {
+    modal.classList.remove('open');
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const urlLang = params.get('lang');
@@ -410,4 +561,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialLang = urlLang && I18N[urlLang] ? urlLang : savedLang && I18N[savedLang] ? savedLang : 'pt';
   setLanguage(initialLang);
   renderSimulatorInspector();
+  startCarouselAutoPlay();
 });

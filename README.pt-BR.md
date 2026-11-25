@@ -156,6 +156,16 @@ Quer testar como o seu backend se comporta com dados ligeiramente diferentes sem
 
 ---
 
+## 🔮 O que vem por aí (Roadmap & Backlog Futuro)
+
+O Hooksmith está evoluindo para unificar webhooks HTTP, mensageria assíncrona e automação agendada em uma única forja 100% local:
+
+- 📡 **Integração com Apache Kafka:** Conecte-se a brokers Kafka locais para inspecionar mensagens em tópicos em tempo real, publicar eventos JSON com 1 clique e criar pontes automáticas (`Webhook HTTP ➔ Tópico Kafka`).
+- 🐇 **Integração com RabbitMQ:** Monitore exchanges e filas AMQP visualmente, inspecione Dead Letter Queues (DLQ), simule consumidores locais e dispare mensagens em filas quando uma regra de mock for acionada.
+- ⏰ **Agendamento de Chamadas & Cron Jobs:** Programe disparos periódicos de webhooks, baterias de testes automatizadas e políticas realistas de retentativa (*exponential backoff*) sem depender de scripts externos.
+
+---
+
 ## ⌨️ Atalhos de Teclado
 
 | Atalho | Ação |
@@ -178,6 +188,16 @@ O Hooksmith salva seus dados em um banco de dados SQLite local na pasta de dados
 - **Linux:** `~/.config/Hooksmith/hooksmith.db`
 
 Nenhum dado trafega para servidores externos.
+
+---
+
+## 🤝 100% Open Source — Contribua com o Projeto!
+
+O **Hooksmith é 100% Open Source (Licença MIT)**, feito de dev para dev. Qualquer pessoa pode contribuir e ajudar a evoluir a ferramenta!
+
+- 🍴 **Envie um Pull Request:** Quer ajudar a construir as integrações com **Apache Kafka**, **RabbitMQ**, **Agendamento de Chamadas** ou melhorar a interface? Faça um fork do projeto e envie seu PR!
+- 💡 **Sugira Funcionalidades ou Reporte Bugs:** Abra uma issue em [GitHub Issues](https://github.com/claudsan/hooksmith/issues) com suas ideias e feedbacks.
+- ⭐ **Apoie o Projeto:** Se o Hooksmith facilitou o seu dia a dia testando webhooks, deixe uma estrela (Star) no repositório do GitHub!
 
 ---
 

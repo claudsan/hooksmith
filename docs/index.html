@@ -43,6 +43,7 @@
       <nav class="nav-links">
         <a href="#story" data-i18n="nav_story">A Origem</a>
         <a href="#features" data-i18n="nav_features">Funcionalidades</a>
+        <a href="#roadmap" data-i18n="nav_roadmap" style="color:var(--brand);font-weight:700;">Novidades</a>
         <a href="#manual" data-i18n="nav_manual">Manual de Uso</a>
         <a href="#shortcuts" data-i18n="nav_shortcuts">Atalhos</a>
       </nav>
@@ -92,6 +93,7 @@
         <span class="pill-badge ok" data-i18n="badge_local">100% Local & Offline</span>
         <span class="pill-badge" data-i18n="badge_privacy">Zero Nuvem • Zero Telemetria</span>
         <span class="pill-badge brand" data-i18n="badge_dev">Feito de Dev para Dev</span>
+        <span class="pill-badge ok" data-i18n="badge_oss">💚 100% Open Source (MIT)</span>
       </div>
 
       <img src="assets/hooksmith-logo.png" alt="Hooksmith Logo" class="hero-logo" />
@@ -109,6 +111,60 @@
         <a href="#manual" class="btn btn-primary" data-i18n="cta_manual">📖 Ler Manual de Uso</a>
         <a href="https://github.com/claudsan/hooksmith" target="_blank" rel="noopener" class="btn btn-secondary"
           data-i18n="cta_github">⭐ Ver no GitHub</a>
+      </div>
+
+      <!-- Real Application Screenshots Carousel (4 Views) -->
+      <div class="carousel-wrapper">
+        <span class="section-eyebrow" style="margin-bottom:14px;" data-i18n="car_eyebrow">📸 INTERFACE REAL DA APLICAÇÃO</span>
+
+        <div class="carousel-tabs" role="tablist">
+          <button type="button" class="carousel-tab active" data-slide-tab="0" onclick="goToSlide(0)">
+            <span class="carousel-tab-num">01 • OVERVIEW</span>
+            <span class="carousel-tab-title" data-i18n="car_t1">Dashboard & Live Traffic</span>
+          </button>
+          <button type="button" class="carousel-tab" data-slide-tab="1" onclick="goToSlide(1)">
+            <span class="carousel-tab-num">02 • REQUEST / RESPONSE</span>
+            <span class="carousel-tab-title" data-i18n="car_t2">Inspeção Request & Response</span>
+          </button>
+          <button type="button" class="carousel-tab" data-slide-tab="2" onclick="goToSlide(2)">
+            <span class="carousel-tab-num">03 • MOCK INSPECTOR</span>
+            <span class="carousel-tab-title" data-i18n="car_t3">Inspeção de Mock & Callback</span>
+          </button>
+          <button type="button" class="carousel-tab" data-slide-tab="3" onclick="goToSlide(3)">
+            <span class="carousel-tab-num">04 • MOCK FORGE</span>
+            <span class="carousel-tab-title" data-i18n="car_t4">Editor de Mock & Callback</span>
+          </button>
+        </div>
+
+        <div class="carousel-stage" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
+          <button type="button" class="carousel-nav-btn prev" onclick="prevSlide()" aria-label="Slide anterior">❮</button>
+          <button type="button" class="carousel-nav-btn next" onclick="nextSlide()" aria-label="Próximo slide">❯</button>
+
+          <div class="carousel-slide active" data-slide="0">
+            <img src="assets/screenshot-1-overview.png" alt="Hooksmith Overview and Live Traffic" onclick="openLightbox(this.src)" />
+          </div>
+          <div class="carousel-slide" data-slide="1">
+            <img src="assets/screenshot-2-request-inspector.png" alt="Hooksmith Request and Response Inspector" onclick="openLightbox(this.src)" />
+          </div>
+          <div class="carousel-slide" data-slide="2">
+            <img src="assets/screenshot-3-mock-inspector.png" alt="Hooksmith Mock Rule Inspector and Async Callback" onclick="openLightbox(this.src)" />
+          </div>
+          <div class="carousel-slide" data-slide="3">
+            <img src="assets/screenshot-4-mock-editor.png" alt="Hooksmith Mock Editor Modal" onclick="openLightbox(this.src)" />
+          </div>
+
+          <div class="carousel-caption-bar">
+            <div id="carousel-caption" class="carousel-caption-text" data-i18n="car_d1">
+              <strong>1. Visão Geral & Live Traffic:</strong> Listeners HTTP e HTTPS (com SSL automático), regras de mock com badges SSL/Callback e gerador de comando cURL de teste.
+            </div>
+            <div class="carousel-dots">
+              <button type="button" class="carousel-dot active" data-slide-dot="0" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+              <button type="button" class="carousel-dot" data-slide-dot="1" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+              <button type="button" class="carousel-dot" data-slide-dot="2" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+              <button type="button" class="carousel-dot" data-slide-dot="3" onclick="goToSlide(3)" aria-label="Slide 4"></button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <p style="font-size:0.84rem;color:var(--brand);margin-bottom:10px;font-weight:600;" data-i18n="sim_hint">
@@ -383,6 +439,187 @@
       </div>
     </section>
 
+    <!-- 4.5 Roadmap / What's Coming Next (Medium-High Prominence Banner) -->
+    <section id="roadmap">
+      <div class="container">
+        <div class="roadmap-banner">
+          <div class="section-header" style="margin-bottom:12px;">
+            <span class="section-eyebrow" data-i18n="rd_eyebrow">🔮 O QUE VEM POR AÍ • ROADMAP & BACKLOG</span>
+            <h2 data-i18n="rd_title">Muito além do HTTP: Mensageria & Automação Local</h2>
+            <p data-i18n="rd_subtitle">
+              O Hooksmith está evoluindo para unificar webhooks, filas de mensageria e disparos agendados em uma única forja 100% local.
+            </p>
+          </div>
+
+          <div class="roadmap-grid">
+            <!-- Kafka Card -->
+            <div class="roadmap-card">
+              <div>
+                <div class="roadmap-card-top">
+                  <div class="roadmap-icon">📡</div>
+                  <span class="soon-pill">
+                    <span class="soon-dot"></span>
+                    <span data-i18n="rd_soon">Em Breve</span>
+                  </span>
+                </div>
+                <h3 data-i18n="rd1_title">Integração com Apache Kafka</h3>
+                <p data-i18n="rd1_desc">
+                  Conecte-se a brokers Kafka locais ou de desenvolvimento para inspecionar mensagens em tópicos, publicar eventos JSON com 1 clique e criar pontes automáticas (Webhook HTTP ➔ Tópico Kafka).
+                </p>
+              </div>
+              <div class="roadmap-tags">
+                <span class="tip-chip">Topic Consumer & Producer</span>
+                <span class="tip-chip">Webhook ➔ Kafka Bridge</span>
+                <span class="tip-chip">Avro / JSON</span>
+              </div>
+            </div>
+
+            <!-- RabbitMQ Card -->
+            <div class="roadmap-card">
+              <div>
+                <div class="roadmap-card-top">
+                  <div class="roadmap-icon">🐇</div>
+                  <span class="soon-pill">
+                    <span class="soon-dot"></span>
+                    <span data-i18n="rd_soon">Em Breve</span>
+                  </span>
+                </div>
+                <h3 data-i18n="rd2_title">Integração com RabbitMQ</h3>
+                <p data-i18n="rd2_desc">
+                  Monitore exchanges e filas AMQP em tempo real, simule consumidores locais, inspecione Dead Letter Queues (DLQ) e dispare mensagens diretamente em filas quando uma regra de mock for acionada.
+                </p>
+              </div>
+              <div class="roadmap-tags">
+                <span class="tip-chip">AMQP 0-9-1</span>
+                <span class="tip-chip">Exchanges & Queues</span>
+                <span class="tip-chip">DLQ Replay</span>
+              </div>
+            </div>
+
+            <!-- Scheduled Calls Card -->
+            <div class="roadmap-card">
+              <div>
+                <div class="roadmap-card-top">
+                  <div class="roadmap-icon">⏰</div>
+                  <span class="soon-pill">
+                    <span class="soon-dot"></span>
+                    <span data-i18n="rd_soon">Em Breve</span>
+                  </span>
+                </div>
+                <h3 data-i18n="rd3_title">Agendamento de Chamadas & Cron</h3>
+                <p data-i18n="rd3_desc">
+                  Programe disparos periódicos de webhooks (Cron Jobs), baterias de testes automatizadas e simulações realistas de retentativas (exponential backoff) sem precisar de scripts externos.
+                </p>
+              </div>
+              <div class="roadmap-tags">
+                <span class="tip-chip">Cron Scheduler</span>
+                <span class="tip-chip">Exponential Backoff</span>
+                <span class="tip-chip">Batch Replay</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 100% Open Source Community Callout -->
+          <div class="oss-callout">
+            <div class="oss-callout-content">
+              <span class="oss-callout-badge" data-i18n="oss_badge">💚 100% OPEN SOURCE • LICENÇA MIT</span>
+              <h3 data-i18n="oss_title">Construído pela comunidade, para a comunidade — Contribua!</h3>
+              <p data-i18n="oss_desc">
+                O Hooksmith é 100% código aberto. Qualquer desenvolvedor pode contribuir com código, implementar novas integrações do backlog (como Kafka e RabbitMQ), sugerir melhorias ou reportar bugs no GitHub.
+              </p>
+            </div>
+            <div class="oss-actions">
+              <a href="https://github.com/claudsan/hooksmith/pulls" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-i18n="oss_btn_fork">🍴 Contribuir no GitHub</a>
+              <a href="https://github.com/claudsan/hooksmith/issues" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" data-i18n="oss_btn_issues">💡 Sugerir Feature / Issue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.5 Roadmap / What's Coming Next (Medium-High Prominence Banner) -->
+    <section id="roadmap">
+      <div class="container">
+        <div class="roadmap-banner">
+          <div class="section-header" style="margin-bottom:12px;">
+            <span class="section-eyebrow" data-i18n="rd_eyebrow">🔮 O QUE VEM POR AÍ • ROADMAP & BACKLOG</span>
+            <h2 data-i18n="rd_title">Muito além do HTTP: Mensageria & Automação Local</h2>
+            <p data-i18n="rd_subtitle">
+              O Hooksmith está evoluindo para unificar webhooks, filas de mensageria e disparos agendados em uma única forja 100% local.
+            </p>
+          </div>
+
+          <div class="roadmap-grid">
+            <!-- Kafka Card -->
+            <div class="roadmap-card">
+              <div>
+                <div class="roadmap-card-top">
+                  <div class="roadmap-icon">📡</div>
+                  <span class="soon-pill">
+                    <span class="soon-dot"></span>
+                    <span data-i18n="rd_soon">Em Breve</span>
+                  </span>
+                </div>
+                <h3 data-i18n="rd1_title">Integração com Apache Kafka</h3>
+                <p data-i18n="rd1_desc">
+                  Conecte-se a brokers Kafka locais ou de desenvolvimento para inspecionar mensagens em tópicos, publicar eventos JSON com 1 clique e criar pontes automáticas (Webhook HTTP ➔ Tópico Kafka).
+                </p>
+              </div>
+              <div class="roadmap-tags">
+                <span class="tip-chip">Topic Consumer & Producer</span>
+                <span class="tip-chip">Webhook ➔ Kafka Bridge</span>
+                <span class="tip-chip">Avro / JSON</span>
+              </div>
+            </div>
+
+            <!-- RabbitMQ Card -->
+            <div class="roadmap-card">
+              <div>
+                <div class="roadmap-card-top">
+                  <div class="roadmap-icon">🐇</div>
+                  <span class="soon-pill">
+                    <span class="soon-dot"></span>
+                    <span data-i18n="rd_soon">Em Breve</span>
+                  </span>
+                </div>
+                <h3 data-i18n="rd2_title">Integração com RabbitMQ</h3>
+                <p data-i18n="rd2_desc">
+                  Monitore exchanges e filas AMQP em tempo real, simule consumidores locais, inspecione Dead Letter Queues (DLQ) e dispare mensagens diretamente em filas quando uma regra de mock for acionada.
+                </p>
+              </div>
+              <div class="roadmap-tags">
+                <span class="tip-chip">AMQP 0-9-1</span>
+                <span class="tip-chip">Exchanges & Queues</span>
+                <span class="tip-chip">DLQ Replay</span>
+              </div>
+            </div>
+
+            <!-- Scheduled Calls Card -->
+            <div class="roadmap-card">
+              <div>
+                <div class="roadmap-card-top">
+                  <div class="roadmap-icon">⏰</div>
+                  <span class="soon-pill">
+                    <span class="soon-dot"></span>
+                    <span data-i18n="rd_soon">Em Breve</span>
+                  </span>
+                </div>
+                <h3 data-i18n="rd3_title">Agendamento de Chamadas & Cron</h3>
+                <p data-i18n="rd3_desc">
+                  Programe disparos periódicos de webhooks (Cron Jobs), baterias de testes automatizadas e simulações realistas de retentativas (exponential backoff) sem precisar de scripts externos.
+                </p>
+              </div>
+              <div class="roadmap-tags">
+                <span class="tip-chip">Cron Scheduler</span>
+                <span class="tip-chip">Exponential Backoff</span>
+                <span class="tip-chip">Batch Replay</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 5. Step-by-Step User Manual -->
     <section id="manual">
       <div class="container">
@@ -553,6 +790,11 @@
       </p>
     </div>
   </footer>
+
+  <!-- Lightbox Modal for Full-Screen Screenshot Preview -->
+  <div id="lightbox-modal" class="lightbox-overlay" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Hooksmith Fullscreen Preview" />
+  </div>
 
   <script src="app.js"></script>
 </body>
