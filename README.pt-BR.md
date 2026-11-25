@@ -7,8 +7,18 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/claudsan/hooksmith/actions/workflows/ci.yml"><img src="https://github.com/claudsan/hooksmith/actions/workflows/ci.yml/badge.svg" alt="CI — Build & TypeCheck"></a>
+  <a href="https://github.com/claudsan/hooksmith/actions/workflows/release.yml"><img src="https://github.com/claudsan/hooksmith/actions/workflows/release.yml/badge.svg" alt="Release Binaries (Win / Linux / macOS)"></a>
+  <a href="https://github.com/claudsan/hooksmith/actions/workflows/pages.yml"><img src="https://github.com/claudsan/hooksmith/actions/workflows/pages.yml/badge.svg" alt="Deploy GitHub Pages"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-10B981.svg" alt="License: MIT"></a>
+  <a href="https://github.com/claudsan/hooksmith/pulls"><img src="https://img.shields.io/badge/PRs-welcome-F97316.svg" alt="PRs Welcome"></a>
+  <img src="https://img.shields.io/badge/100%25_Local-Offline_First-38BDF8.svg" alt="100% Local & Offline">
+</p>
+
+<p align="center">
   <a href="README.pt-BR.md">🇧🇷 Versão em Português</a> •
   <a href="README.md">🇺🇸 English Version</a> •
+  <a href="README.es-ES.md">🇪🇸 Versión en Español</a> •
   <a href="CONTRIBUTING.pt-BR.md">🛠️ Documentação Técnica & Arquitetura</a> •
   <a href="https://claudsan.github.io/hooksmith/">🌐 Site Oficial</a>
 </p>

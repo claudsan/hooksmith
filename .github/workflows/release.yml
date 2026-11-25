@@ -1,0 +1,81 @@
+name: Release — Build Electron Binaries (Win / Linux / macOS)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-binaries:
+    name: Build on ${{ matrix.label }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            label: Windows (x64 NSIS & Portable)
+            platform_flag: --win
+            artifact_name: Hooksmith-Windows-x64
+          - os: ubuntu-latest
+            label: Linux (x64 AppImage & deb)
+            platform_flag: --linux
+            artifact_name: Hooksmith-Linux-x64
+          - os: macos-latest
+            label: macOS (x64 & arm64 DMG/ZIP)
+            platform_flag: --mac
+            artifact_name: Hooksmith-macOS-Universal
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Rebuild native modules (better-sqlite3) for Electron ABI
+        run: npx electron-builder install-app-deps
+
+      - name: Build application (TypeScript + Vite + Electron Main)
+        run: npm run build
+
+      - name: Package Electron binaries for ${{ matrix.label }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+        run: npx electron-builder ${{ matrix.platform_flag }} --publish never
+
+      - name: Upload installer artifacts to Workflow Run
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: |
+            release/*.exe
+            release/*.AppImage
+            release/*.deb
+            release/*.dmg
+            release/*.zip
+            !release/*.blockmap
+          if-no-files-found: error
+
+      - name: Publish binaries to GitHub Release (on tag v*)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            release/*.exe
+            release/*.AppImage
+            release/*.deb
+            release/*.dmg
+            release/*.zip

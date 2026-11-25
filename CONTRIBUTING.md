@@ -5,8 +5,19 @@
 <h1 align="center">🛠️ Hooksmith — Technical Documentation & Architecture Guide</h1>
 
 <p align="center">
+  <a href="https://github.com/claudsan/hooksmith/actions/workflows/ci.yml"><img src="https://github.com/claudsan/hooksmith/actions/workflows/ci.yml/badge.svg" alt="CI — Build & TypeCheck"></a>
+  <a href="https://github.com/claudsan/hooksmith/actions/workflows/release.yml"><img src="https://github.com/claudsan/hooksmith/actions/workflows/release.yml/badge.svg" alt="Release Binaries (Win / Linux / macOS)"></a>
+  <a href="https://github.com/claudsan/hooksmith/actions/workflows/pages.yml"><img src="https://github.com/claudsan/hooksmith/actions/workflows/pages.yml/badge.svg" alt="Deploy GitHub Pages"></a>
+  <img src="https://img.shields.io/badge/Electron-33-47848F?logo=electron&logoColor=white" alt="Electron 33">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" alt="React 19">
+  <img src="https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript&logoColor=white" alt="TypeScript 5.6">
+  <img src="https://img.shields.io/badge/Fastify-5.0-000000?logo=fastify&logoColor=white" alt="Fastify 5">
+</p>
+
+<p align="center">
   <a href="CONTRIBUTING.pt-BR.md">🇧🇷 Versão em Português</a> •
   <a href="CONTRIBUTING.md">🇺🇸 English Version</a> •
+  <a href="CONTRIBUTING.es-ES.md">🇪🇸 Versión en Español</a> •
   <a href="README.md">📖 Back to User Manual</a>
 </p>
 

@@ -1,7 +1,10 @@
 {
   "name": "hooksmith",
   "version": "1.0.0",
-  "description": "Hooksmith - Local API, Webhook Forge",
+  "description": "Hooksmith - Local API & Webhook Forge",
+  "author": "Claudenir Santana <claudsan@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://claudsan.github.io/hooksmith/",
   "main": "dist-electron/electron/main.js",
   "scripts": {
     "dev": "concurrently -k \"npm:dev:vite\" \"npm:dev:electron\"",
@@ -9,16 +12,97 @@
     "dev:electron": "wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .",
     "build": "tsc -b tsconfig.json tsconfig.node.json && vite build && tsc -p tsconfig.node.json",
     "typecheck": "tsc -b tsconfig.json tsconfig.node.json --noEmit",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder --publish never"
+  },
+  "build": {
+    "appId": "com.hooksmith.app",
+    "productName": "Hooksmith",
+    "copyright": "Copyright © 2026 Hooksmith Contributors",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "**/node_modules/better-sqlite3/**/*"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "category": "Development",
+      "maintainer": "Claudenir Santana <claudsan@gmail.com>",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "mac": {
+      "icon": "build/icon.png",
+      "category": "public.app-category.developer-tools",
+      "identity": null,
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ]
+    }
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@monaco-editor/react": "^4.6.0",
-    "@types/selfsigned": "^2.0.4",
     "better-sqlite3": "^11.3.0",
     "chokidar": "^3.6.0",
-    "electron": "^33.0.0",
     "fastify": "^5.0.0",
     "i18next": "^27.2.7",
     "lucide-react": "^0.460.0",
@@ -34,10 +118,13 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@types/selfsigned": "^2.0.4",
     "@vitejs/plugin-react": "^4.3.0",
     "autoprefixer": "^10.4.20",
     "concurrently": "^9.0.0",
     "cross-env": "^7.0.3",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.0",
