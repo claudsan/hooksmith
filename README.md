@@ -167,16 +167,6 @@ Hooksmith is actively evolving to unify HTTP webhooks, asynchronous message brok
 
 ---
 
-## 🔮 Future Roadmap & Upcoming Capabilities
-
-Hooksmith is actively evolving to unify HTTP webhooks, asynchronous message brokers, and scheduled automation into a single local forge:
-
-- 📡 **Apache Kafka Integration:** Connect to local/dev Kafka brokers to inspect topic streams in real time, publish JSON events in 1 click, and create automated bridges (`HTTP Webhook ➔ Kafka Topic`).
-- 🐇 **RabbitMQ & AMQP Forge:** Monitor exchanges and queues visually, inspect Dead Letter Queues (DLQ), simulate queue consumers, and publish messages directly to RabbitMQ when a mock rule is triggered.
-- ⏰ **Scheduled Calls & Cron Jobs:** Schedule recurring webhook triggers, automated test batches, and realistic retry policies (exponential backoff) without external cron scripts.
-
----
-
 ## ⌨️ Keyboard Shortcuts
 
 | Shortcut | Action |
@@ -199,18 +189,6 @@ Hooksmith stores all data in a local SQLite database on your machine:
 - **Linux:** `~/.config/Hooksmith/hooksmith.db`
 
 No telemetry, analytics, or external network requests are ever made by the core application.
-
----
-
-## 🤝 100% Open Source — Contribute to Hooksmith!
-
-**Hooksmith is 100% Open Source (MIT License)** and built by developers, for developers. Everyone is welcome to contribute and help make Hooksmith even better!
-
-> 🛠️ **Read our [Technical Documentation & Architecture Guide (`CONTRIBUTING.md`)](CONTRIBUTING.md)** to learn about our tech stack (Electron, React 19, Fastify, SQLite WAL, Monaco, Undici), internal architecture diagrams, and how to run and contribute to the project locally.
-
-- 🍴 **Submit a Pull Request:** Want to help build the **Apache Kafka**, **RabbitMQ**, or **Cron Scheduler** integrations, or polish the UI? Fork the repo and open a PR!
-- 💡 **Suggest Ideas & Report Bugs:** Open an issue on [GitHub Issues](https://github.com/claudsan/hooksmith/issues) to share feedback or request new features.
-- ⭐ **Support the Project:** If Hooksmith saves you time debugging webhooks, give the repository a star on GitHub!
 
 ---
 
