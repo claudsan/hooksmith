@@ -20,7 +20,8 @@
   <a href="README.md">🇺🇸 English Version</a> •
   <a href="README.es-ES.md">🇪🇸 Versión en Español</a> •
   <a href="CONTRIBUTING.es-ES.md">🛠️ Documentación Técnica y Arquitectura</a> •
-  <a href="https://claudsan.github.io/hooksmith/?lang=es">🌐 Sitio Oficial</a>
+  <a href="https://claudsan.github.io/hooksmith/?lang=es">🌐 Sitio Oficial</a> •
+  ⚡ App Hermana: <a href="https://claudsan.github.io/loadsmith/"><strong>LoadSmith</strong></a>
 </p>
 
 ---
